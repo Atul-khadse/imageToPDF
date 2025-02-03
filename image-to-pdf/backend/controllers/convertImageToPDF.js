@@ -28,13 +28,10 @@ const convertImageToPDF = (req, res) => {
         });
     });
 
-
     writeStream.on("error", (err) => {
         console.log("Error while writing PDF:", err);
         res.status(500).send("Error generating PDF");
     });
 };
-
-
 
 module.exports = { convertImageToPDF };

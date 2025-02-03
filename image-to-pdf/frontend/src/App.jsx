@@ -44,14 +44,14 @@ const App = () => {
       alert("Error uploading images.");
     }
   };
-
+   
   return (
-    <div className="min-h-screen bg-gray-100 flex justify-center items-center p-4">
-      <div className="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full">
-        <h1 className="text-2xl font-bold mb-4 text-center">Image to PDF Converter</h1>
+    <div className="min-h-screen bg-gray-300 flex justify-center items-center p-4">
+      <div className="bg-cyan-700  p-8 rounded-lg shadow-lg max-w-lg w-full">
+        <h1 className="text-2xl font-semibold mb-4 text-center">Image to PDF Converter</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-xl font-semibold text-gray-200 mb-2">
               Select Images
             </label>
             <input
@@ -67,17 +67,17 @@ const App = () => {
           <div className="space-y-2">
             {images.length > 0 && (
               <div>
-                <h2 className="text-lg font-semibold">Image Order</h2>
+                <h2 className="text-lg font-semibold mb-3">Image Order</h2>
                 <ul className="space-y-2">
                   {images.map((image, index) => (
                     <li key={index} className="flex justify-between items-center">
-                      {/* Image number ordering */}
-                      <span className="flex items-center space-x-2">
+                  
+                      <span className="flex items-center my-1.5 space-x-2">
                         <span>{index + 1}.</span>
                         <span>{image.name}</span>
                       </span>
 
-                      {/* Reorder buttons */}
+                    
                       <div className="flex space-x-2">
                         <button
                           type="button"
@@ -112,11 +112,11 @@ const App = () => {
         </form>
 
         {pdfUrl && (
-          <div className="mt-6 text-center">
+          <div className="mt-6 text-center w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-950 ">
             <a
               href={pdfUrl}
               download="converted.pdf"
-              className="text-blue-500 underline"
+              className="font-light"
             >
               Download PDF
             </a>
